@@ -8,7 +8,12 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class AppComponent {
   rooms: FirebaseListObservable<any[]>;
+  newRoomName: string;
   constructor(af: AngularFire) {
     this.rooms = af.database.list('/rooms');
+  }
+
+  createRoom() {
+    this.rooms.push(this.newRoomName)
   }
 }

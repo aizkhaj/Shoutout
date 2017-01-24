@@ -1,4 +1,6 @@
 <h1>ShoutOut</h1>
+  <input [(ngModel)]="newRoomName" placeholder="Insert New Room">
+  <button (click)="createRoom(newRoomName)">Create New Room</button>
 <ul>
   <li class="text" *ngFor="let room of rooms | async">
     {{room.$value}}
