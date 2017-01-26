@@ -1,3 +1,4 @@
+<div>
 <h1>ShoutOut</h1>
   <input [(ngModel)]="newRoomName" placeholder="Insert New Room">
   <button (click)="createRoom(newRoomName)">Create New Room</button>
@@ -6,3 +7,5 @@
     {{room.$value}}
   </li>
 </ul>
+</div>
+<message-view [messages]="messages"></message-view>

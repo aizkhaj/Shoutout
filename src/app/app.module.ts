@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
+import { ViewMessages } from './components/messagesView.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyA73X6767uGivbb2dNQi-F7fI3sv-PrZ9A',
@@ -16,7 +17,8 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewMessages
   ],
   imports: [
     BrowserModule,
