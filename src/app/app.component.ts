@@ -12,10 +12,9 @@ export class AppComponent {
   newRoomName: string;
   messages: FirebaseListObservable<Message[]>;
   selectedRoom: string;
-  af: AngularFire;
 
 
-  constructor(af: AngularFire) {
+  constructor(public af: AngularFire) {
     this.rooms = af.database.list('/rooms');
     this.messages = af.database.list('/messages');
   }
@@ -26,10 +25,11 @@ export class AppComponent {
 
   selectRoom(room) {
     this.selectedRoom = room;
+    this.getMessagesByRoomId(room.$key);
   }
 
-  getRoomById(roomId) {
-    this.rooms = this.af.database.list('/rooms', {
+  getMessagesByRoomId(roomId) {
+    this.messages = this.af.database.list('/messages', {
      query: {
        orderByChild: 'roomId',
        equalTo: roomId

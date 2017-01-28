@@ -8,11 +8,11 @@ import { FirebaseListObservable } from 'angularfire2';
   <div class="msg-container">
   <!--here goes the name of the room that is currently selected in app.component.html. For this to be, these two comps need to communicate.
   //Below the room name, it should show a list of messages here.-->
-  {{messages.roomId}}
+
     <div class="messages-block" *ngFor="let msgs of messages | async" >
       <span class="user">{{msgs.userId}}</span>
       <span class="content">{{msgs.content}}</span>
-      {{msgs.sentAt}} {{msgs.roomId}}
+      {{msgs.sentAt}}
     </div>
   </div>
   `,
@@ -34,5 +34,4 @@ import { FirebaseListObservable } from 'angularfire2';
 export class ViewMessages {
   @Input()
   messages: FirebaseListObservable<Message[]>;
-
 }
