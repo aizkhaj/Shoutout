@@ -1,11 +1,15 @@
-<div>
-<h1>ShoutOut</h1>
-  <input [(ngModel)]="newRoomName" placeholder="Insert New Room">
-  <button (click)="createRoom(newRoomName)">Create New Room</button>
-<ul>
-  <li class="text" *ngFor="let room of rooms | async">
-    {{room.$value}}
-  </li>
-</ul>
+<div id="container">
+  <div class="sidebar">
+    <h1>ShoutOut</h1>
+      <input [(ngModel)]="newRoomName" placeholder="Insert New Room">
+      <button (click)="createRoom(newRoomName)">Create New Room</button>
+    <ul class="rooms">
+      <li *ngFor="let room of rooms | async"
+      [class.selected]="room === selectedRoom"
+      (click)="selectRoom(room)">
+        <span class="text">{{room.$value}}</span>
+      </li>
+    </ul>
+  </div>
+  <message-view [messages]="messages"></message-view>
 </div>
-<message-view [messages]="messages"></message-view>
