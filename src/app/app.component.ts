@@ -16,7 +16,7 @@ export class AppComponent {
 
   constructor(public af: AngularFire) {
     this.rooms = af.database.list('/rooms');
-    this.messages = af.database.list('/messages');
+    //this.messages = af.database.list('/messages'); we don't need this line anymore because it's being called from our getMessagesByRoomId method.
   }
 
   createRoom() {
