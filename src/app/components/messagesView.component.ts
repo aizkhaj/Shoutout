@@ -19,7 +19,7 @@ import { FirebaseListObservable } from 'angularfire2';
   styles: [`
     .msg-container {
       float: left;
-      margin-left: 1em;
+      margin-left: 17em;
       margin-top: 5em;
     }
     .messages-block {

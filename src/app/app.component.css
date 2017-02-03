@@ -6,8 +6,8 @@
   float: left;
   clear: left;
   background-color: gray;
-  padding: 0.8em;
-  position: relative;
+  padding: 1em;
+  position: fixed;
   left: -10px;
   top: -10px;
   height: 100%;

@@ -1,6 +1,8 @@
 <div id="container">
   <div class="sidebar">
     <h1>ShoutOut</h1>
+      <button md-raised-button (click)="login()">Use my Google Account</button>
+      <br>
       <input [(ngModel)]="newRoomName" placeholder="Insert New Room">
       <button (click)="createRoom(newRoomName)">Create New Room</button>
     <ul class="rooms">
@@ -10,6 +12,7 @@
         <span class="text">{{room.$value}}</span>
       </li>
     </ul>
+    <button md-raised-button (click)="logout()">Logout</button>
   </div>
   <message-view [messages]="messages"></message-view>
 </div>
