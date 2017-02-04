@@ -22,6 +22,7 @@ export class AppComponent {
       if(user) {
         // user logged in
         this.user = user;
+        console.log(this.user);
       } else {
         // user not logged in
         this.user = {};
@@ -33,7 +34,6 @@ export class AppComponent {
     this.af.auth.login({
       provider: AuthProviders.Google
     });
-    console.log(this.user);
   }
 
   logout() {

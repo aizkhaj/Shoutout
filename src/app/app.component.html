@@ -1,7 +1,10 @@
 <div id="container">
   <div class="sidebar">
     <h1>ShoutOut</h1>
-      <button md-raised-button (click)="login()">Use my Google Account</button>
+      <button md-raised-button (click)="login()"
+      [hidden]="user.uid">Sign in with Google</button>
+      <div *ngIf="user.google?.displayName">Hi, {{user.google.displayName}}!</div>
+      <br>
       <br>
       <input [(ngModel)]="newRoomName" placeholder="Insert New Room">
       <button (click)="createRoom(newRoomName)">Create New Room</button>
@@ -12,7 +15,8 @@
         <span class="text">{{room.$value}}</span>
       </li>
     </ul>
-    <button md-raised-button (click)="logout()">Logout</button>
+    <button md-raised-button (click)="logout()"
+    [hidden]="!user.uid">Logout</button>
   </div>
   <message-view [messages]="messages"></message-view>
 </div>
