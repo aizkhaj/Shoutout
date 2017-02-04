@@ -15,6 +15,13 @@ import { FirebaseListObservable } from 'angularfire2';
       {{msgs.sentAt}}
     </div>
   </div>
+  <div class="input-section">
+    <input class="input-field"
+    [(ngModel)]="userMessage"
+    placeholder="Type your message here">
+    <button id="send-button"
+    (click)="send()">Send</button>
+  </div>
   `,
   styles: [`
     .msg-container {
@@ -28,10 +35,34 @@ import { FirebaseListObservable } from 'angularfire2';
       padding: 1em;
       padding-right: 15em;
     }
+
+    .input-section {
+      position: fixed;
+      bottom: 5vh;
+      margin-left: 17em;
+    }
+
+    .input-field {
+      position: fixed;
+      margin-bottom: 2em;
+      width: 60vw;
+    }
+
+    #send-button {
+      position: relative;
+      margin-left: 65vw;
+    }
   `]
 })
 
 export class ViewMessages {
   @Input()
   messages: FirebaseListObservable<Message[]>;
+  userMessage: string;
+
+
+  send() {
+    //this method pushes user input into Message Array on firebase
+    this.messages.push(this.userMessage);
+  }
 }
