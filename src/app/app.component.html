@@ -18,5 +18,9 @@
     <button md-raised-button (click)="logout()"
     [hidden]="!user.uid">Logout</button>
   </div>
-  <message-view [messages]="messages"></message-view>
+  <message-view
+  [messages]="messages"
+  [user]="user.google?.displayName"
+  [selectedRoomKey]="this.selectedRoomKey"
+  ></message-view>
 </div>

@@ -13,6 +13,7 @@ export class AppComponent {
   messages: FirebaseListObservable<Message[]>;
   selectedRoom: string;
   user = {};
+  selectedRoomKey: string;
 
 
   constructor(public af: AngularFire) {
@@ -47,6 +48,7 @@ export class AppComponent {
 
   selectRoom(room) {
     this.selectedRoom = room;
+    this.selectedRoomKey = room.$key;
     this.getMessagesByRoomId(room.$key);
   }
 
