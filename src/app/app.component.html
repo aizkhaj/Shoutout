@@ -6,7 +6,7 @@
       <div *ngIf="user.google?.displayName">Hi, {{user.google.displayName}}!</div>
       <br>
       <br>
-      <input [(ngModel)]="newRoomName" placeholder="Insert New Room">
+      <input [(ngModel)]="newRoomName" placeholder="Insert New Room" class="input">
       <button (click)="createRoom(newRoomName)">Create New Room</button>
     <ul class="rooms">
       <li *ngFor="let room of rooms | async"
